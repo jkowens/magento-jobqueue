@@ -31,6 +31,10 @@ class Jowens_JobQueue_Model_Worker extends Mage_Core_Model_Abstract
 
 	
 	public function executeJobs($schedule=null) {
+		if(!Mage::getStoreConfig('jobqueue/config/enabled')) {
+			return;
+		}
+
 		if($schedule) {
 			$jobsRoot = Mage::getConfig()->getNode('crontab/jobs');
 	    	$jobConfig = $jobsRoot->{$schedule->getJobCode()};
