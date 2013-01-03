@@ -55,8 +55,14 @@ class Jowens_JobQueue_Block_Adminhtml_Job_View extends Mage_Adminhtml_Block_Widg
             : $this->__('N/A');
         $this->setRunAtHtml($this->escapeHtml($runAt));   
 
-        $status = $this->_job->getFailedAt() ? $this->__("Failed") : $this->__("Pending");
+        $status = $this->__("Pending");
+        if( $this->_job->getFailedAt()) {
+            $status = $this->__('Failed');
+        } else if($this->_job->getLockedAt()) {
+             $status = $this->__('In Process');
+        }
         $this->setStatusHtml($this->escapeHtml($status));
+        
         $this->setErrorHtml($this->escapeHtml($this->_job->getError()));
 
         $createdAt = (strtotime($this->_job->getCreatedAt()))
@@ -64,6 +70,5 @@ class Jowens_JobQueue_Block_Adminhtml_Job_View extends Mage_Adminhtml_Block_Widg
             : $this->__('N/A');
         $this->setCreatedAtHtml($this->escapeHtml($createdAt));        
         return parent::_toHtml();
-    }
-    
+    } 
 }
