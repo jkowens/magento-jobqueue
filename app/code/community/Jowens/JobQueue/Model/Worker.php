@@ -1,6 +1,6 @@
 <?php
 
-set_include_path(get_include_path().PS.Mage::getBaseDir('lib').DS.'djjob');
+set_include_path(get_include_path().PS.Mage::getBaseDir('lib').DS.'DJJob');
 
 require_once('DJJob.php');
 
