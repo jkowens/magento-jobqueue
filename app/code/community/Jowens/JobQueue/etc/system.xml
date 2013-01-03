@@ -14,6 +14,12 @@
                     <sort_order>2</sort_order>
                     <show_in_default>1</show_in_default>
                     <fields>
+                        <enabled translate="label comment">
+                          <label>Cron Worker Enabled</label>
+                          <frontend_type>select</frontend_type>
+                          <source_model>adminhtml/system_config_source_yesno</source_model>
+                          <show_in_default>1</show_in_default>
+                        </enabled>                        
                          <cron_expr>
                             <label>How often do you want the cron to run?</label>
                             <frontend_type>text</frontend_type>

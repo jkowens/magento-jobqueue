@@ -85,7 +85,8 @@
 	</crontab>
     <default>
         <jobqueue>
-            <config>                
+            <config> 
+                <enabled>1</enabled>               
                 <cron_expr>*/5 * * * *</cron_expr>
                 <max_attempts>10</max_attempts>
             </config>
