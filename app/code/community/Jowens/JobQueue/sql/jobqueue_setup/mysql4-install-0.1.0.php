@@ -17,7 +17,6 @@ $installer->run(
 `locked_by` VARCHAR(255) NULL,
 `failed_at` DATETIME NULL,
 `error` TEXT NULL,
-`status` CHAR(1) NOT NULL DEFAULT 'P',
 `created_at` DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;"
 );
