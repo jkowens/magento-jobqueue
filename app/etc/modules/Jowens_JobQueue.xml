@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+	    <Jowens_JobQueue>
+	    	<active>true</active>
+	        <codePool>community</codePool>
+	    </Jowens_JobQueue>
+	</modules>
+</config>

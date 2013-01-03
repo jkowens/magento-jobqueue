@@ -1,0 +1,62 @@
+<div class="content-header">
+    <table cellspacing="0">
+        <tr>
+            <td style="<?php echo $this->getHeaderWidth() ?>"><?php echo $this->getHeaderHtml() ?></td>
+            <td class="form-buttons"><?php echo $this->getButtonsHtml() ?></td>
+        </tr>
+    </table>
+</div>
+
+<div class="entry-edit">
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Job Details'); ?></h4>
+        </div>
+        <div id="log_details_fieldset" class="log-details">
+            <table cellspacing="0" class="log-info table">
+                <col width="25%" />
+                <col />
+                <tbody>
+                    <tr>
+                        <th><?php echo $this->__('Job ID'); ?></th>
+                        <td><?php echo $this->getJobIdHtml(); ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo $this->__('Job Name'); ?></th>
+                        <td><?php echo $this->getJobNameHtml(); ?></td>
+                    </tr>                    
+                    <tr>
+                        <th><?php echo $this->__('Store'); ?></th>
+                        <td><?php echo $this->getStoreNameHtml(); ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo $this->__('Queue'); ?></th>
+                        <td><?php echo $this->getJobQueueHtml(); ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo $this->__('Run At'); ?></th>
+                        <td><?php echo $this->getRunAtHtml(); ?></td>
+                    </tr>                    
+                    <tr>
+                        <th><?php echo $this->__('Attempts'); ?></th>
+                        <td><?php echo $this->getAttemptsHtml(); ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo $this->__('Status'); ?></th>
+                        <td><?php echo $this->getStatusHtml(); ?></td>
+                    </tr>
+                    <tr>
+                        <th><?php echo $this->__('Created At'); ?></th>
+                        <td><?php echo $this->getCreatedAtHtml(); ?></td>
+                    </tr>
+                    <?php if ($this->getErrorHtml()): ?>
+                    <tr>
+                        <th><?php echo $this->__('Error'); ?></th>
+                        <td><?php echo $this->getErrorHtml(); ?></td>
+                    </tr> 
+                    <?php endif; ?>                                       
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

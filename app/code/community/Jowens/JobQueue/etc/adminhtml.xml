@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <system>
+            <children>
+                <jowens_jobqueue_queue translate="title" module="jobqueue">
+                    <title>JobQueue</title>
+                    <action>adminhtml/queue</action>
+                </jowens_jobqueue_queue>
+            </children>
+        </system>
+    </menu>
+     
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <jowens_jobqueue_queue>
+                                <title>JobQueue</title>
+                            </jowens_jobqueue_queue>
+                            <config>
+                                <children>
+                                    <jobqueue translate="title" module="jobqueue">
+                                        <title>JobQueue Configuration</title>
+                                    </jobqueue>
+                                </children>
+                            </config>
+                        </children>
+                    </system>                    
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

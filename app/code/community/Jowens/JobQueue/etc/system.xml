@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <jobqueue translate="label" module="jobqueue">
+            <label>JobQueue</label>
+            <tab>general</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10000</sort_order>
+            <show_in_default>1</show_in_default>
+            <groups>
+                <config translate="label" module="jobqueue">
+                    <label>Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <fields>
+                         <cron_expr>
+                            <label>How often do you want the cron to run?</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <comment>Use Crontab Format (Eg. "*/5 * * * *" for every 5 minutes)</comment>
+                            <show_in_default>1</show_in_default>
+                        </cron_expr>
+                         <max_attempts>
+                            <label>Max Attempts</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>                            
+                            <show_in_default>1</show_in_default>
+                        </max_attempts>
+                    </fields>
+                </config>
+            </groups>
+        </jobqueue>
+    </sections>
+</config>

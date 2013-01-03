@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_queue_index>
+        <reference name="content">
+            <block type="jobqueue/adminhtml_queue" name="jowens_jobqueue_queue" />
+        </reference>
+    </adminhtml_queue_index>
+
+    <adminhtml_queue_view>
+        <reference name="content">
+            <block type="jobqueue/adminhtml_job_view" name="jowens_jobqueue_job" template="jowens/jobqueue/job.phtml"/>
+        </reference>
+    </adminhtml_queue_view>    
+</layout>
