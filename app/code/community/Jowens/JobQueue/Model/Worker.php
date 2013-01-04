@@ -38,9 +38,12 @@ class Jowens_JobQueue_Model_Worker extends Mage_Core_Model_Abstract
 		if($schedule) {
 			$jobsRoot = Mage::getConfig()->getNode('crontab/jobs');
 	    	$jobConfig = $jobsRoot->{$schedule->getJobCode()};
-	    	$this->queue = (string) $jobConfig->queue;
+	    	$queue = $jobConfig->queue;
+	    	if($queue) {
+				$this->setQueue($queue);
+	    	}
 		}
-
+		
 		$this->setupDJJob();
 
 		try {
