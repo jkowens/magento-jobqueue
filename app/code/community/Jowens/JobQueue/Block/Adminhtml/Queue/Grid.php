@@ -63,7 +63,7 @@ class Jowens_JobQueue_Block_Adminhtml_Queue_Grid extends Mage_Adminhtml_Block_Wi
                 'index'     => 'store_id',
                 'type'      => 'store',
                 'store_view'=> true,
-                'width' => '250px',                
+                'width' => '200px',                
             ));
         }        
          
@@ -78,8 +78,29 @@ class Jowens_JobQueue_Block_Adminhtml_Queue_Grid extends Mage_Adminhtml_Block_Wi
             array(
                 'header'=> $this->__('Queue'),
                 'index' => 'queue',
+                'align' => 'center',
+                'width' => '80px',
             )
-        );     
+        ); 
+
+        $this->addColumn('created_at',
+            array(
+                'header'=> $this->__('Created At'),
+                'index' => 'created_at',
+                'type'  => 'datetime',
+                'width' => '175px',
+                'align' => 'center',
+            )
+        );         
+
+        $this->addColumn('run_at',
+            array(
+                'header'=> $this->__('Run At'),
+                'index' => 'run_at',
+                'type'  => 'datetime',
+                'align' => 'center',
+            )
+        );             
 
         $this->addColumn('attempts',
             array(
@@ -98,28 +119,9 @@ class Jowens_JobQueue_Block_Adminhtml_Queue_Grid extends Mage_Adminhtml_Block_Wi
                 'type'  => 'options',
                 'options'   => array('1'=>'Pending', '2'=>'In Process', '0'=>'Failed'),
                 'align' => 'center',
-                'width' => '100px',
+                'width' => '80px',
             )
-        ); 
-
-        $this->addColumn('run_at',
-            array(
-                'header'=> $this->__('Run At'),
-                'index' => 'run_at',
-                'type'  => 'datetime',
-                'align' => 'center',
-            )
-        );                 
-
-        $this->addColumn('created_at',
-            array(
-                'header'=> $this->__('Created At'),
-                'index' => 'created_at',
-                'type'  => 'datetime',
-                'width' => '175px',
-                'align' => 'center',
-            )
-        );  
+        );                  
 
         $this->addColumn('action',
             array(
@@ -153,7 +155,6 @@ class Jowens_JobQueue_Block_Adminhtml_Queue_Grid extends Mage_Adminhtml_Block_Wi
              'url'      => $this->getUrl('*/*/massResubmitJob'),
              'confirm'  => $this->__('Are you sure?')
         ));
-
 
         $this->getMassactionBlock()->addItem('cancel_job', array(
              'label'    => $this->__('Cancel Job'),
