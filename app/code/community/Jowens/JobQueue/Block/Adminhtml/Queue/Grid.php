@@ -21,7 +21,7 @@ class Jowens_JobQueue_Block_Adminhtml_Queue_Grid extends Mage_Adminhtml_Block_Wi
     {
         $collection = Mage::getModel('jobqueue/job')->getCollection();
         //$collection->getSelect()->columns('(`main_table`.`failed_at` is null) as status');
-        $collection->getSelect()->columns("('status') = case when locked_at is not null then 2 when failed_at is not null then 1 else 0 end as status");
+        $collection->getSelect()->columns("(case when main_table.locked_at is not null then 2 when main_table.failed_at is null then 1 else 0 end) as status");        
         $this->setCollection($collection);
          
         return parent::_prepareCollection();
