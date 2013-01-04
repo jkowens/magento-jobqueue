@@ -1,6 +1,6 @@
 #JobQueue
 
-JobQueue allows Magento applications to place tasks in a queue to be processed asynchronously. Some tasks this may be ideal for are:
+JobQueue allows Magento applications to place tasks in a queue to be processed asynchronously. It is built on DJJob a PHP port of the popular Ruby library Delayed_job. Some tasks this may be ideal for are:
 
 * Downloading files
 * Sending data to a back-office application or third party systems
