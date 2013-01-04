@@ -79,7 +79,6 @@
 	            <run>
 	            	<model>jobqueue/worker::executeJobs</model>
 	            </run>
-	            <queue>default</queue>
 	        </jobqueue_default>
 	    </jobs>
 	</crontab>
@@ -89,6 +88,7 @@
                 <enabled>1</enabled>               
                 <cron_expr>*/5 * * * *</cron_expr>
                 <max_attempts>10</max_attempts>
+                <queue>default</queue>
             </config>
         </jobqueue>
     </default>    

@@ -20,19 +20,25 @@
                           <source_model>adminhtml/system_config_source_yesno</source_model>
                           <show_in_default>1</show_in_default>
                         </enabled>                        
-                         <cron_expr>
+                        <cron_expr>
                             <label>How often do you want the cron to run?</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>40</sort_order>
                             <comment>Use Crontab Format (Eg. "*/5 * * * *" for every 5 minutes)</comment>
                             <show_in_default>1</show_in_default>
                         </cron_expr>
-                         <max_attempts>
+                        <max_attempts>
                             <label>Max Attempts</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>50</sort_order>                            
                             <show_in_default>1</show_in_default>
                         </max_attempts>
+                        <queue>
+                            <label>Queue</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>                            
+                            <show_in_default>1</show_in_default>
+                        </queue>                        
                     </fields>
                 </config>
             </groups>
