@@ -49,4 +49,4 @@ Alternatively workers could be configured to run as they normally would using DJ
 
 ###Monitoring Jobs
 
-Pending and failed jobs can be monitored in the adman panel by going to System > JobQueue.
+Pending and failed jobs can be monitored in the admin panel by going to System > JobQueue.
