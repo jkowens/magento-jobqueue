@@ -6,7 +6,8 @@ abstract class Jowens_JobQueue_Model_Job_Abstract extends Mage_Core_Model_Abstra
 	private $storeId;
 
 	public function __construct($name=null) {
-		$this->name = $name;
+		$this->name = $name ? $name : $this->getType();
+		
 		$this->setStoreId(Mage::app()->getStore()->getStoreId());
 	}
 
@@ -31,7 +32,7 @@ abstract class Jowens_JobQueue_Model_Job_Abstract extends Mage_Core_Model_Abstra
 
 	public function getName() 
 	{
-		return $this->getType() . ": " . $this->name;
+		return $this->name;
 	}
 
 	public function setStoreId($storeId) 
