@@ -6,6 +6,11 @@ JobQueue allows Magento applications to place tasks in a queue to be processed a
 * Sending data to a back-office application or third party systems
 * Processing batch jobs
 
+###System Requirements
+-------------------
+* PHP 5.1 or higher
+* Magento CE1.5.x-1.7.x/EE1.7.x-1.12.x
+
 ###Usage
 
 Jobs must extend Jowens_JobQueue_Model_Job_Abstract and implement the perform() method.
