@@ -79,9 +79,17 @@ class Jowens_JobQueue_Model_Worker extends Mage_Core_Model_Abstract
 
 	protected function setupDJJob() {
 		$config  = Mage::getConfig()->getResourceConnectionConfig("default_setup");
+		
+		$dsn = "";
+		if (strpos($config->host, '/') !== false) {
+			$dsn = "mysql:unix_socket=" . $config->host . ";dbname=" . $config->dbname;
+		} else {
+			$dsn = "mysql:host=" . $config->host . ";dbname=" . $config->dbname . ";port=" . $config->port;
+		} 
+
 		DJJob::configure(
-			"mysql:host=" . $config->host . ";dbname=" . $config->dbname . ";port=" . $config->port, 
+			$dsn, 
 			array('mysql_user' => $config->username, 'mysql_pass' => $config->password)
 		);
-	}	
+	}
 }
