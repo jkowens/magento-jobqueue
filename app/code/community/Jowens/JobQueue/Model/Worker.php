@@ -14,7 +14,10 @@ class Jowens_JobQueue_Model_Worker extends Mage_Core_Model_Abstract
 	public function __construct() {
 		list($hostname, $pid) = array(trim(`hostname`), getmypid());
         $this->workerName = "host::$hostname pid::$pid";
-        $this->queue = Mage::getStoreConfig('jobqueue/config/queue') :? self::DEFAULT_QUEUE;	
+        $this->queue = Mage::getStoreConfig('jobqueue/config/queue');
+        if(empty($this->queue)) {
+        	$this->queue = self::DEFAULT_QUEUE;	
+        }
 	}
 
 	public function getQueue() {
