@@ -13,16 +13,25 @@ abstract class Jowens_JobQueue_Model_Job_Abstract extends Mage_Core_Model_Abstra
 
 	public abstract function perform();
 
-    public function enqueue($queue="default", $run_at=null) {
-    	$job = Mage::getModel('jobqueue/job');
-    	$job->setStoreId($this->getStoreId());
-    	$job->setName($this->getName());
-    	$job->setHandler(serialize($this));
-    	$job->setQueue($queue);
-    	$job->setRunAt($run_at);
-    	$job->setCreatedAt(now());
-    	$job->save();
+  public function performImmediate($retryQueue="default") {
+    try {
+      $this->perform();
+    } catch(Exception $e) {
+      $this->enqueue($retryQueue);
+      Mage::log($e);
     }
+  }
+
+  public function enqueue($queue="default", $run_at=null) {
+    $job = Mage::getModel('jobqueue/job');
+    $job->setStoreId($this->getStoreId());
+    $job->setName($this->getName());
+    $job->setHandler(serialize($this));
+    $job->setQueue($queue);
+    $job->setRunAt($run_at);
+    $job->setCreatedAt(now());
+    $job->save();
+  }
 
 	public function setName($name) 
 	{

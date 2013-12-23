@@ -28,7 +28,17 @@ That job can then be used like so:
     $job->setName('Order# 12345')
 	    ->enqueue();
 
-Name is used to identify the job in backend, so be descriptive! The enqueue method can take two optional parameters a string for queue name and timestamp to specify a time to run the job.
+Name is used to identify the job in backend, so be descriptive! The enqueue method can take two optional parameters, a string for queue name and timestamp to specify a time to run the job.
+
+The job can also be attempted immediately. If it fails it is added to
+the default queue for retry.
+
+    $job = Mage::getModel('bar/order_job');
+    $job->setName('Order# 12345')
+      ->performImmediate();
+
+To have the job put on a queue other than the default one, performImmediate
+takes a string value for the name of the retry queue.
 
 ###Running Jobs
 
