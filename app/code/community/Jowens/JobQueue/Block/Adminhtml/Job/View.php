@@ -1,6 +1,6 @@
 <?php
 
-class Jowens_JobQueue_Block_Adminhtml_Job_View extends Mage_Adminhtml_Block_Widget_Form_Container
+class Jowens_JobQueue_Block_Adminhtml_Job_View extends Mage_Adminhtml_Block_Widget_Container
 {
 
     protected $_job;
