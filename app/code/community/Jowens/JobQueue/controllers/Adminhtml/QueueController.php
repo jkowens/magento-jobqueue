@@ -2,25 +2,25 @@
 
 class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controller_Action
 {
-	public function indexAction()
-    {
-		$this->_init()
-      		->renderLayout();
-	}
+  public function indexAction()
+  {
+    $this->_init()
+          ->renderLayout();
+  }
 
-    protected function _init()
-    {
-        $this->loadLayout()
-            ->_setActiveMenu('system/jowens_jobqueue_queue')
-            ->_title($this->__('System'))->_title($this->__('JobQueue'))
-            ->_addBreadcrumb($this->__('System'), $this->__('System'))
-            ->_addBreadcrumb($this->__('JobQueue'), $this->__('JobQueue'));
-         
-        return $this;
-    }    
+  protected function _init()
+  {
+      $this->loadLayout()
+          ->_setActiveMenu('system/jowens_jobqueue_queue')
+          ->_title($this->__('System'))->_title($this->__('JobQueue'))
+          ->_addBreadcrumb($this->__('System'), $this->__('System'))
+          ->_addBreadcrumb($this->__('JobQueue'), $this->__('JobQueue'));
+
+      return $this;
+  }
 
 	public function viewAction()
-    {   
+  {
         $id  = $this->getRequest()->getParam('id');
         $job = Mage::getModel('jobqueue/job');
 
@@ -31,18 +31,18 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
                 Mage::getSingleton('adminhtml/session')->addError($this->__('This job no longer exists.'));
                 $this->_redirect('*/*/index');
                 return;
-            }   
-        }   
-     
+            }
+        }
+
         $this->_title($job->getId() ? $job->getName() : "Job Details");
-     
+
         $data = Mage::getSingleton('adminhtml/session')->getJobData(true);
         if (!empty($data)) {
             $job->setData($data);
-        }   
-     
+        }
+
         Mage::register('jowens_jobqueue_job', $job);
-     
+
         $this->_init()
             ->renderLayout();
     }
@@ -68,7 +68,7 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
                 Mage::getSingleton('adminhtml/session')->addError($this->__('Job "%s" could not be resubmitted', $job->getName()));
             }
         } 
-        $this->_redirect('*/*/index');          
+        $this->_redirect('*/*/index');
     }
 
     public function cancelAction()
@@ -92,7 +92,7 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
                 Mage::getSingleton('adminhtml/session')->addError($this->__('Job "%s" could not be canceled', $job->getName()));
             }
         } 
-        $this->_redirect('*/*/index');          
+        $this->_redirect('*/*/index');
     }
 
     public function deleteAction()
@@ -107,7 +107,7 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
                 Mage::getSingleton('adminhtml/session')->addError($this->__('This job no longer exists.'));
                 $this->_redirect('*/*/index');
                 return;
-            }  
+            }
 
             try {
                 $job->delete();
@@ -115,9 +115,9 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError($this->__('Job "%s" could not be deleted', $job->getName()));
             }
-        }  
-        $this->_redirect('*/*/index');         
-    }    
+        }
+        $this->_redirect('*/*/index');
+    }
 
     public function massResubmitJobAction()
     {
@@ -140,10 +140,10 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
         if($error) {
             Mage::getSingleton('adminhtml/session')->addError($this->__('%s job(s) could not be resubmitted', $error));
         }
-        
+
         if($success) {
             Mage::getSingleton('adminhtml/session')->addSuccess($this->__('%s job(s) resubmitted', $success));
-        }      
+        }
 
         $this->_redirect('*/*/index');
     }
@@ -173,14 +173,13 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
         if($error) {
             Mage::getSingleton('adminhtml/session')->addError($this->__('%s job(s) could not be canceled', $error));
         }
-        
+
         if($success) {
             Mage::getSingleton('adminhtml/session')->addSuccess($this->__('%s job(s) canceled', $success));
         }
-       
 
         $this->_redirect('*/*/index');
-    } 
+    }
 
     public function massDeleteJobAction()
     {
@@ -203,10 +202,10 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
         if($error) {
             Mage::getSingleton('adminhtml/session')->addError($this->__('%s job(s) could not be deleted', $error));
         }
-        
+
         if($success) {
             Mage::getSingleton('adminhtml/session')->addSuccess($this->__('%s job(s) deleted', $success));
-        }       
+        }
 
         $this->_redirect('*/*/index');
     }
