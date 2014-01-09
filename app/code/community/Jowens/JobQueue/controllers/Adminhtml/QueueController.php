@@ -2,25 +2,25 @@
 
 class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controller_Action
 {
-  public function indexAction()
-  {
-    $this->_init()
-          ->renderLayout();
-  }
+    public function indexAction()
+    {
+        $this->_init()
+            ->renderLayout();
+    }
 
-  protected function _init()
-  {
-      $this->loadLayout()
-          ->_setActiveMenu('system/jowens_jobqueue_queue')
-          ->_title($this->__('System'))->_title($this->__('JobQueue'))
-          ->_addBreadcrumb($this->__('System'), $this->__('System'))
-          ->_addBreadcrumb($this->__('JobQueue'), $this->__('JobQueue'));
+    protected function _init()
+    {
+        $this->loadLayout()
+            ->_setActiveMenu('system/jowens_jobqueue_queue')
+            ->_title($this->__('System'))->_title($this->__('JobQueue'))
+            ->_addBreadcrumb($this->__('System'), $this->__('System'))
+            ->_addBreadcrumb($this->__('JobQueue'), $this->__('JobQueue'));
 
-      return $this;
-  }
+        return $this;
+    }
 
-	public function viewAction()
-  {
+	  public function viewAction()
+    {
         $id  = $this->getRequest()->getParam('id');
         $job = Mage::getModel('jobqueue/job');
 
