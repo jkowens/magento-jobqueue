@@ -19,7 +19,7 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
         return $this;
     }
 
-	  public function viewAction()
+    public function viewAction()
     {
         $id  = $this->getRequest()->getParam('id');
         $job = Mage::getModel('jobqueue/job');
