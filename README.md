@@ -54,13 +54,13 @@ Jobs in other queues can be executed by adding more cron entries to a custom mod
     <crontab>
 	    <jobs>
 	        <jobqueue_orders>
-	            <schedule>
-	            	<config_path>jobqueue/config/cron_expr</config_path>
-	           	</schedule>
-	            <run>
-	            	<model>jobqueue/worker::executeJobs</model>
-	            </run>
-				<queue>orders</orders>
+              <schedule>
+                <config_path>jobqueue/config/cron_expr</config_path>
+              </schedule>
+              <run>
+                <model>jobqueue/worker::executeJobs</model>
+              </run>
+              <queue>orders</queue>
 	        </jobqueue_orders>
 	    </jobs>
 	</crontab>
