@@ -1,3 +1,3 @@
 [submodule "lib/DJJob"]
 	path = lib/DJJob
-	url = git@github.com:seatgeek/djjob.git
+	url = https://github.com/seatgeek/djjob.git
