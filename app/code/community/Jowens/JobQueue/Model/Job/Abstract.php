@@ -17,7 +17,7 @@ abstract class Jowens_JobQueue_Model_Job_Abstract extends Mage_Core_Model_Abstra
       $this->perform();
     } catch(Exception $e) {
       $this->enqueue($retryQueue);
-      Mage::log($e);
+      Mage::logException($e);
     }
   }
 
