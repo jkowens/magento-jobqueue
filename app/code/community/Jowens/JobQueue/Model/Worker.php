@@ -75,7 +75,7 @@ class Jowens_JobQueue_Model_Worker extends Mage_Core_Model_Abstract
                 }
             }
         } catch (Exception $e) {
-            Mage::log($e);
+            Mage::logException($e);
         }
     }
 

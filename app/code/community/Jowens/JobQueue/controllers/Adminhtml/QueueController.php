@@ -131,7 +131,7 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
                 $job->resubmit();
                 $success++;
             } catch (Exception $e) {
-                Mage::log($e);
+                Mage::logException($e);
                 $error++;
             }
         }
@@ -164,7 +164,7 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
                     $success++;
                 }
             } catch (Exception $e) {
-                Mage::log($e);
+                Mage::logException($e);
                 $error++;
             }
         }
@@ -193,7 +193,7 @@ class Jowens_JobQueue_Adminhtml_QueueController extends Mage_Adminhtml_Controlle
                 $job->delete();
                 $success++;
             } catch (Exception $e) {
-                Mage::log($e);
+                Mage::logException($e);
                 $error++;
             }
         }
