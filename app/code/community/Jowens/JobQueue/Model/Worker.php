@@ -93,5 +93,9 @@ class Jowens_JobQueue_Model_Worker extends Mage_Core_Model_Abstract
             $dsn, 
             array('mysql_user' => $config->username, 'mysql_pass' => $config->password)
             );
+
+        if(!empty($config->initStatements)) {
+            DJJob::runQuery($config->initStatements);
+        }
     }
 }
