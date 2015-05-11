@@ -2,23 +2,23 @@
 <config>
     <modules>
         <Jowens_JobQueue>
-            <version>0.3.0</version>
+            <version>0.4.0</version>
         </Jowens_JobQueue>
     </modules>	
     <global>
     	<models>
-    		<jobqueue>
-    			<class>Jowens_JobQueue_Model</class>
-           	 	<resourceModel>jobqueue_resource</resourceModel>
-        	</jobqueue>
-	        <jobqueue_resource>
-	            <class>Jowens_JobQueue_Model_Resource</class>
-	            <entities>
-	                <job>
-	                    <table>jobs</table>
-	                </job>
-	            </entities>
-	        </jobqueue_resource>
+            <jobqueue>
+                <class>Jowens_JobQueue_Model</class>
+                <resourceModel>jobqueue_resource</resourceModel>
+            </jobqueue>
+            <jobqueue_resource>
+                <class>Jowens_JobQueue_Model_Resource</class>
+                <entities>
+                    <job>
+                        <table>jobs</table>
+                    </job>
+                </entities>
+            </jobqueue_resource>
     	</models>
         <blocks>
             <jobqueue>            
@@ -26,18 +26,18 @@
             </jobqueue>
         </blocks>        
     	<helpers>
-	        <jobqueue>
-	            <class>Jowens_JobQueue_Helper</class>
-	        </jobqueue>    		
+	    <jobqueue>
+	        <class>Jowens_JobQueue_Helper</class>
+	    </jobqueue>    		
     	</helpers>
-	    <resources>
-	        <jobqueue_setup>
-	            <setup>
-	                <module>Jowens_JobQueue</module>
-	                <class>Jowens_JobQueue_Model_Resource_Setup</class>
-	            </setup>
-	        </jobqueue_setup>
-	    </resources>    	
+        <resources>
+            <jobqueue_setup>
+                <setup>
+                    <module>Jowens_JobQueue</module>
+                    <class>Jowens_JobQueue_Model_Resource_Setup</class>
+                </setup>
+            </jobqueue_setup>
+        </resources>    	
     </global>
     <frontend>
         <routers>
@@ -71,17 +71,17 @@
         </layout>
     </adminhtml>      
     <crontab>
-	    <jobs>
-	        <jobqueue_default>
-	            <schedule>
-	            	<config_path>jobqueue/config/cron_expr</config_path>
-	           	</schedule>
-	            <run>
-	            	<model>jobqueue/worker::executeJobs</model>
-	            </run>
-	        </jobqueue_default>
-	    </jobs>
-	</crontab>
+        <jobs>
+            <jobqueue_default>
+                <schedule>
+                    <config_path>jobqueue/config/cron_expr</config_path>
+               	</schedule>
+                <run>
+                    <model>jobqueue/worker::executeJobs</model>
+                </run>
+            </jobqueue_default>
+        </jobs>
+    </crontab>
     <default>
         <jobqueue>
             <config> 
