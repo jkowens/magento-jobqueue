@@ -53,7 +53,7 @@ class Jowens_JobQueue_Model_Worker extends Mage_Core_Model_Abstract
             $collection->addFieldToFilter('queue', array('eq' => $this->getQueue()))
             ->addFieldToFilter('run_at', array(
                 array('null' => true),
-                array('lteq'=> date('Y-m-d H:i:s'))
+                array('lteq' => now())
                 ))
             ->addFieldToFilter(array('locked_at', 'locked_by'), array(
                 array('locked_at', 'null' => true),
