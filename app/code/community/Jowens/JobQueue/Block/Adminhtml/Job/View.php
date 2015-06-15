@@ -14,6 +14,11 @@ class Jowens_JobQueue_Block_Adminhtml_Job_View extends Mage_Adminhtml_Block_Widg
 
         parent::__construct();
 
+        $this->_addButton('back', array(
+            'label'   => Mage::helper('catalog')->__('Back'),
+            'onclick' => 'setLocation(\''.$this->getUrl('*/*/', array('store'=>$this->getRequest()->getParam('store', 0))).'\')',
+            'class'   => 'back'
+        ), 0, -20);
         $confirmMsg = $this->__('Are you sure you want to do this?');
         $resubmitUrl = $this->getUrl('*/*/resubmit', array('id' => $this->_job->getId()));
         $this->_addButton('resubmit', array(
@@ -32,7 +37,7 @@ class Jowens_JobQueue_Block_Adminhtml_Job_View extends Mage_Adminhtml_Block_Widg
 
     public function getHeaderText()
     {
-        return $this->__("Job: \"%s\"", $this->_job->getName()); 
+        return $this->__("Job: \"%s\"", $this->_job->getName());
     }
 
     protected function _toHtml()
