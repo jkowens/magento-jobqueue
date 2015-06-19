@@ -42,8 +42,8 @@ the default queue for retry.
     $job->setName('Order# 12345')
       ->performImmediate();
 
-To have the job put on a queue other than the default one, performImmediate
-takes a string value for the name of the retry queue.
+To put the job on a queue other than the default one, performImmediate
+takes an optional string value for the name of the retry queue.
 
 ###Running Jobs
 
