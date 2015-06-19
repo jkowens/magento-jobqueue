@@ -31,7 +31,7 @@ That job can then be used like so:
 
     $job = Mage::getModel('bar/order_job');
     $job->setName('Order# 12345')
-	    ->enqueue();
+        ->enqueue();
 
 Name is used to identify the job in backend, so be descriptive! The enqueue method can take two optional parameters, a string for queue name and timestamp to specify a time to run the job.
 
@@ -40,7 +40,7 @@ the default queue for retry.
 
     $job = Mage::getModel('bar/order_job');
     $job->setName('Order# 12345')
-      ->performImmediate();
+        ->performImmediate();
 
 To put the job on a queue other than the default one, performImmediate
 takes an optional string value for the name of the retry queue.
