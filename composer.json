@@ -16,9 +16,9 @@
     ], 
     "extra": {
         "map": [
-            ["app/code/community/Jowens/JobQueue ", "app/code/community/Jowens/JobQueue "],
+            ["app/code/community/Jowens/JobQueue/", "app/code/community/Jowens/JobQueue/"],
             ["app/design/adminhtml/default/default/layout/jowens/jobqueue.xml", "app/design/adminhtml/default/default/layout/jowens/jobqueue.xml"],
-            ["app/design/adminhtml/default/default/template/jowens/jobqueue", "app/design/adminhtml/default/default/template/jowens/jobqueue"],
+            ["app/design/adminhtml/default/default/template/jowens/jobqueue/", "app/design/adminhtml/default/default/template/jowens/jobqueue/"],
             ["app/etc/modules/Jowens_JobQueue.xml", "app/etc/modules/Jowens_JobQueue.xml"]
         ]
     }
