@@ -1,8 +1,11 @@
 <?php
-
-set_include_path(get_include_path().PS.Mage::getBaseDir('lib').DS.'DJJob');
-
-require_once('DJJob.php');
+if(file_exists(Mage::getBaseDir('lib').DS.'DJJob')){
+    set_include_path(get_include_path().PS.Mage::getBaseDir('lib').DS.'DJJob');
+    require_once('DJJob.php');
+}
+else if(!class_exists('\DJJob')){
+    Mage::throwException('The class DJJob does not exist. Please add the class to /lib/DJJob/DJJob.php OR install DJJob via magento-composer-installer. See https://github.com/jkowens/magento-jobqueue for more details.');
+}
 
 class Jowens_JobQueue_Model_Worker extends Mage_Core_Model_Abstract 
 {

@@ -1,0 +1,25 @@
+{
+   "name": "jkowens/magento-jobqueue",
+    "license": "MIT",
+    "type": "magento-module",
+    "version": "0.5.0",
+    "description":"JobQueue for Magento using djjob",
+    "require": {
+      "php": ">=5.1",
+      "seatgeek/djjob": "dev-master"   
+    },
+    "authors":[
+        {
+            "name":"Jordan Owens",
+            "homepage":"http://www.jordanowens.me"
+        }
+    ], 
+    "extra": {
+        "map": [
+            ["app/code/community/Jowens/JobQueue/", "app/code/community/Jowens/JobQueue/"],
+            ["app/design/adminhtml/default/default/layout/jowens/jobqueue.xml", "app/design/adminhtml/default/default/layout/jowens/jobqueue.xml"],
+            ["app/design/adminhtml/default/default/template/jowens/jobqueue/", "app/design/adminhtml/default/default/template/jowens/jobqueue/"],
+            ["app/etc/modules/Jowens_JobQueue.xml", "app/etc/modules/Jowens_JobQueue.xml"]
+        ]
+    }
+}
