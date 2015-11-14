@@ -3,7 +3,7 @@
     "license": "MIT",
     "type": "magento-module",
     "version": "0.5.0",
-    "description":"JobQueue for Magento using djjob",
+    "description":"JobQueue for Magento using DJJob",
     "require": {
       "php": ">=5.1",
       "seatgeek/djjob": "dev-master"   
