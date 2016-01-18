@@ -1,7 +1,7 @@
 #JobQueue
 
 Do you need to run a process outside of a user generated request? Are you
-working on an integration that requires "guaranteed delivery?" JobQueue
+working on an integration that requires "guaranteed delivery"? JobQueue
 allows Magento applications to place tasks in a queue to be processed
 asynchronously. It is built on DJJob and makes use of the existing MySQL backend. 
 Some tasks this may be ideal for are:
