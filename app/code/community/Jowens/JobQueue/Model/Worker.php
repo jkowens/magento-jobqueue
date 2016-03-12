@@ -88,6 +88,10 @@ class Jowens_JobQueue_Model_Worker extends Mage_Core_Model_Abstract
         $dsn = "";
         if (strpos($config->host, '/') !== false) {
             $dsn = "mysql:unix_socket=" . $config->host . ";dbname=" . $config->dbname;
+        }
+        elseif (strpos($config->host, ':') !== false) {
+            list($host, $port) = explode(':', $config->host);
+            $dsn = "mysql:host=" . $host . ";dbname=" . $config->dbname . ";port=" . $port;
         } else {
             $dsn = "mysql:host=" . $config->host . ";dbname=" . $config->dbname . ";port=" . $config->port;
         } 
