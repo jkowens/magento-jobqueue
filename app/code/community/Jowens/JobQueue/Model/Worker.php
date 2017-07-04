@@ -105,5 +105,8 @@ class Jowens_JobQueue_Model_Worker extends Mage_Core_Model_Abstract
         if(!empty($config->initStatements)) {
             DJJob::runQuery($config->initStatements);
         }
+
+        $logLevel = (int) Mage::getStoreConfig('jobqueue/config/log_level');
+        DJBase::setLogLevel($logLevel);
     }
 }

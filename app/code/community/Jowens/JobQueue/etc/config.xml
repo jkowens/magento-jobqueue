@@ -89,6 +89,7 @@
                 <cron_expr>*/5 * * * *</cron_expr>
                 <max_attempts>10</max_attempts>
                 <queue>default</queue>
+                <log_level>0</log_level>
             </config>
         </jobqueue>
     </default>    
