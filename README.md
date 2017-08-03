@@ -1,4 +1,4 @@
-#JobQueue
+# JobQueue
 
 Do you need to run a process outside of a user generated request? Are you
 working on an integration that requires "guaranteed delivery"? JobQueue
@@ -10,13 +10,13 @@ Some tasks this may be ideal for are:
 * Processing batch jobs
 * Sending data to a back-office application or third party systems
 
-###System Requirements
+### System Requirements
 
 * PHP 5.1 or higher
 * MySQL 4.1.20 or higher
 * Magento CE1.6.0-1.9.x/EE1.7.0-1.14.x
 
-###Usage
+### Usage
 
 Jobs must extend Jowens_JobQueue_Model_Job_Abstract and implement the perform() method.
 
@@ -45,7 +45,7 @@ the default queue for retry.
 To put the job on a queue other than the default one, performImmediate
 takes an optional string value for the name of the retry queue.
 
-###Running Jobs
+### Running Jobs
 
 JobQueue requires Magento cron to be configured in order to run pending jobs. By default a JobQueue worker executes the pending jobs every 5 minutes. If a job fails it will be retried up to 10 times. Both of these settings can be configured in the admin panel under System > Configuration > General > JobQueue.
 
@@ -67,6 +67,6 @@ Jobs in other queues can be executed by adding more cron entries to a custom mod
 
 Alternatively workers could be configured to run as they normally would using DJJob. See the [documentation](https://github.com/seatgeek/djjob#running-the-jobs).
 
-###Monitoring Jobs
+### Monitoring Jobs
 
 Pending and failed jobs can be monitored in the admin panel by going to System > JobQueue.
