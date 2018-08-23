@@ -25,7 +25,7 @@ abstract class Jowens_JobQueue_Model_Job_Abstract extends Mage_Core_Model_Abstra
     $job = Mage::getModel('jobqueue/job');
     $job->setStoreId($this->getStoreId());
     $job->setName($this->getName());
-    $job->setHandler(serialize($this));
+    $job->setHandler(base64_encode(serialize($this)));
     $job->setQueue($queue);
     $job->setRunAt($run_at);
     $job->setCreatedAt(now());
