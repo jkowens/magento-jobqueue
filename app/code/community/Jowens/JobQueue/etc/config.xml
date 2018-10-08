@@ -88,6 +88,8 @@
                 <enabled>1</enabled>               
                 <cron_expr>*/5 * * * *</cron_expr>
                 <max_attempts>10</max_attempts>
+                <limit_jobs>1000</limit_jobs>
+                <sort_random>1</sort_random>
                 <queue>default</queue>
                 <log_level>0</log_level>
             </config>
