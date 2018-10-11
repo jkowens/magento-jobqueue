@@ -63,14 +63,8 @@ class Jowens_JobQueue_Model_Worker extends Mage_Core_Model_Abstract
                 array('locked_by', 'eq' => $this->workerName)               
                 ))              
             ->addFieldToFilter('failed_at', array('null' => true))
-            ->addFieldToFilter('attempts', array('lt' => (int)Mage::getStoreConfig('jobqueue/config/max_attempts')));
-
-            if (Mage::getStoreConfigFlag('jobqueue/config/sort_random')) {
-                // randomly order to prevent lock contention among workers
-                $collection->getSelect()->order(new Zend_Db_Expr('RAND()'));
-            } else {
-                $collection->setOrder('id','ASC');
-            }
+            ->addFieldToFilter('attempts', array('lt' => (int)Mage::getStoreConfig('jobqueue/config/max_attempts')))
+            ->setOrder('id','ASC');
 
             $limit = Mage::getStoreConfig('jobqueue/config/limit_jobs');
             if ($limit > 0) {
