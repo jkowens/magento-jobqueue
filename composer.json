@@ -2,7 +2,7 @@
    "name": "jkowens/magento-jobqueue",
     "license": "MIT",
     "type": "magento-module",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "description": "JobQueue for Magento using DJJob",
     "require": {
       "php": ">=5.1",

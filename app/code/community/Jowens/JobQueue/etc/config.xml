@@ -2,11 +2,11 @@
 <config>
     <modules>
         <Jowens_JobQueue>
-            <version>0.7.0</version>
+            <version>0.8.0</version>
         </Jowens_JobQueue>
-    </modules>	
+    </modules>
     <global>
-    	<models>
+      <models>
             <jobqueue>
                 <class>Jowens_JobQueue_Model</class>
                 <resourceModel>jobqueue_resource</resourceModel>
@@ -19,25 +19,25 @@
                     </job>
                 </entities>
             </jobqueue_resource>
-    	</models>
-        <blocks>
-            <jobqueue>            
-                <class>Jowens_JobQueue_Block</class>
-            </jobqueue>
-        </blocks>        
-    	<helpers>
-	    <jobqueue>
-	        <class>Jowens_JobQueue_Helper</class>
-	    </jobqueue>    		
-    	</helpers>
-        <resources>
-            <jobqueue_setup>
-                <setup>
-                    <module>Jowens_JobQueue</module>
-                    <class>Jowens_JobQueue_Model_Resource_Setup</class>
-                </setup>
-            </jobqueue_setup>
-        </resources>    	
+      </models>
+      <blocks>
+          <jobqueue>
+              <class>Jowens_JobQueue_Block</class>
+          </jobqueue>
+      </blocks>
+      <helpers>
+        <jobqueue>
+          <class>Jowens_JobQueue_Helper</class>
+        </jobqueue>
+      </helpers>
+      <resources>
+          <jobqueue_setup>
+              <setup>
+                  <module>Jowens_JobQueue</module>
+                  <class>Jowens_JobQueue_Model_Resource_Setup</class>
+              </setup>
+          </jobqueue_setup>
+      </resources>
     </global>
     <frontend>
         <routers>
@@ -48,8 +48,8 @@
                     <frontName>jobqueue</frontName>
                 </args>
             </jowens_jobqueue>
-        </routers>  
-    </frontend>  
+        </routers>
+    </frontend>
     <admin>
         <routers>
             <adminhtml>
@@ -60,7 +60,7 @@
                 </args>
             </adminhtml>
         </routers>
-    </admin>  
+    </admin>
     <adminhtml>
         <layout>
             <updates>
@@ -69,13 +69,13 @@
                 </jowens_jobqueue>
             </updates>
         </layout>
-    </adminhtml>      
+    </adminhtml>
     <crontab>
         <jobs>
             <jobqueue_default>
                 <schedule>
                     <config_path>jobqueue/config/cron_expr</config_path>
-               	</schedule>
+                </schedule>
                 <run>
                     <model>jobqueue/worker::executeJobs</model>
                 </run>
@@ -84,8 +84,8 @@
     </crontab>
     <default>
         <jobqueue>
-            <config> 
-                <enabled>1</enabled>               
+            <config>
+                <enabled>1</enabled>
                 <cron_expr>*/5 * * * *</cron_expr>
                 <max_attempts>10</max_attempts>
                 <limit_jobs>1000</limit_jobs>
@@ -93,5 +93,5 @@
                 <log_level>0</log_level>
             </config>
         </jobqueue>
-    </default>    
+    </default>
 </config>
