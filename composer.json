@@ -6,7 +6,7 @@
     "description": "JobQueue for Magento using DJJob",
     "require": {
       "php": ">=5.1",
-      "seatgeek/djjob": "dev-master"
+      "seatgeek/djjob": "1.0.0"
     },
     "authors": [
         {
